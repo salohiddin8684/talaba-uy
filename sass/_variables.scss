@@ -1,0 +1,36 @@
+﻿/*
+  TalabaUy responsive styles
+  Mobile-first layout with tablet and desktop enhancements
+*/
+:root {
+  --primary: #2b7cff;
+  --primary-dark: #1b55c7;
+  --accent: #ffb347;
+  --accent-2: #23c7a6;
+  --ink: #0b1b34;
+  --muted: #5a6b85;
+  --surface: #ffffff;
+  --surface-alt: #f4f7ff;
+  --surface-glass: rgba(255, 255, 255, 0.78);
+  --shadow: 0 18px 45px rgba(14, 32, 68, 0.18);
+  --shadow-soft: 0 12px 30px rgba(14, 32, 68, 0.12);
+  --radius: 18px;
+  --radius-lg: 26px;
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  --primary: #4aa0ff;
+  --primary-dark: #2b7cff;
+  --accent: #ffc66b;
+  --accent-2: #32d6b4;
+  --ink: #e8f0ff;
+  --muted: #9fb1cc;
+  --surface: #0f1a2b;
+  --surface-alt: #0b1524;
+  --surface-glass: rgba(12, 22, 38, 0.8);
+  --shadow: 0 18px 45px rgba(0, 0, 0, 0.45);
+  --shadow-soft: 0 12px 28px rgba(0, 0, 0, 0.3);
+  color-scheme: dark;
+}
+

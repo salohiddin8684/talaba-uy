@@ -1,0 +1,36 @@
+﻿/* Sections */
+section {
+  padding: 3.5rem 0;
+}
+
+.section-head {
+  display: grid;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.section-head h2 {
+  font-size: clamp(1.6rem, 2.6vw, 2.2rem);
+  font-weight: 700;
+}
+
+.section-head p {
+  color: var(--muted);
+}
+
+.listings {
+  position: relative;
+}
+
+.listings::before {
+  content: "";
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(43, 124, 255, 0.18), transparent 65%);
+  right: -120px;
+  top: 20%;
+  z-index: -1;
+}
+

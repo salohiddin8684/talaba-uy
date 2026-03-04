@@ -1,0 +1,28 @@
+﻿/* How it works */
+.steps {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.step {
+  background: linear-gradient(135deg, #ffffff 0%, #f3f6ff 100%);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  display: grid;
+  gap: 0.7rem;
+  border: 1px solid rgba(15, 34, 74, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.step:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+}
+
+.step-number {
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: 1px;
+}
+

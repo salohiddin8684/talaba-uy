@@ -1,0 +1,42 @@
+﻿/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 0.85rem 1.5rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  min-height: 44px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #2b7cff 0%, #2bd3ff 100%);
+  color: #fff;
+  box-shadow: 0 12px 22px rgba(43, 124, 255, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 16px 32px rgba(43, 124, 255, 0.4);
+}
+
+.btn-outline {
+  border: 1px solid rgba(43, 124, 255, 0.35);
+  color: var(--primary-dark);
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.btn-outline:hover {
+  transform: translateY(-1px);
+}
+
+.btn-ghost {
+  background: rgba(43, 124, 255, 0.12);
+  color: var(--primary-dark);
+}
+

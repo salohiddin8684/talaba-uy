@@ -1,0 +1,94 @@
+﻿* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Manrope", "Helvetica Neue", sans-serif;
+  color: var(--ink);
+  background: radial-gradient(circle at 12% 18%, #f8fbff 0%, transparent 42%),
+    radial-gradient(circle at 90% 10%, #e6efff 0%, transparent 35%),
+    linear-gradient(180deg, #f6f9ff 0%, #eef3ff 45%, #f7f9ff 100%);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.25;
+  z-index: -1;
+}
+
+body::before {
+  top: -120px;
+  left: -80px;
+  background: radial-gradient(circle, #2b7cff 0%, transparent 65%);
+}
+
+body::after {
+  bottom: -140px;
+  right: -120px;
+  background: radial-gradient(circle, #23c7a6 0%, transparent 65%);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Syne", "Manrope", sans-serif;
+  letter-spacing: -0.02em;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+.container {
+  width: min(1120px, 90%);
+  margin: 0 auto;
+}
+
+main {
+  position: relative;
+  z-index: 1;
+  flex: 1 0 auto;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.surface-alt {
+  background: var(--surface-alt);
+}
+
+:focus-visible {
+  outline: 3px solid rgba(43, 124, 255, 0.35);
+  outline-offset: 2px;
+}
+

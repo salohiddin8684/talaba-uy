@@ -1,0 +1,141 @@
+﻿/* Admin */
+.admin-main {
+  padding: 2rem 0 4rem;
+}
+
+.admin-shell .section-head {
+  margin-bottom: 1.5rem;
+}
+
+.admin-card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(15, 34, 74, 0.06);
+}
+
+.admin-dashboard {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.admin-toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.admin-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.stat-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f2f6ff 100%);
+  border-radius: 14px;
+  padding: 0.8rem 1.1rem;
+  box-shadow: var(--shadow-soft);
+  display: grid;
+  gap: 0.2rem;
+  min-width: 150px;
+}
+
+.admin-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.form-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.form-row label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+}
+
+.form-row input,
+.form-row select,
+.form-row textarea {
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  border-radius: 12px;
+  border: 1px solid rgba(11, 27, 52, 0.16);
+  font-size: 0.95rem;
+  background: #fff;
+  color: #0b1b34;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-row input::placeholder,
+.form-row textarea::placeholder {
+  color: #5a6b85;
+}
+
+.form-row input:focus,
+.form-row select:focus,
+.form-row textarea:focus {
+  border-color: rgba(43, 124, 255, 0.5);
+  box-shadow: 0 0 0 3px rgba(43, 124, 255, 0.12);
+  outline: none;
+}
+
+.form-row.inline label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+}
+
+.inline-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.form-hint {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.listing-list {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.listing-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1rem;
+  border-radius: 14px;
+  border: 1px solid rgba(11, 27, 52, 0.08);
+  background: #fdfdff;
+  box-shadow: var(--shadow-soft);
+}
+
+.listing-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.two-col {
+  display: grid;
+  gap: 1rem;
+}
+
