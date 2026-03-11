@@ -2,8 +2,7 @@
 const detailsStore = window.TalabaUyStore;
 const ui = window.TalabaUyUI;
 const configDetails = window.TalabaUyConfig || {
-  FALLBACK_IMAGE:
-    "https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1200&q=70",
+  FALLBACK_IMAGE: "./assets/placeholder.svg",
 };
 
 const getElement = (id) => document.getElementById(id);
@@ -99,6 +98,12 @@ const init = async () => {
   if (imageEl) {
     imageEl.src = listing.image || configDetails.FALLBACK_IMAGE;
     imageEl.alt = listing.title;
+    imageEl.addEventListener("error", () => {
+      const fallbackUrl = new URL(configDetails.FALLBACK_IMAGE, window.location.href).href;
+      if (imageEl.src !== fallbackUrl) {
+        imageEl.src = fallbackUrl;
+      }
+    });
   }
 
   const badgeEl = getElement("details-badge");
@@ -206,6 +211,12 @@ const init = async () => {
   if (planImage) {
     planImage.src = listing.planImage || configDetails.FALLBACK_IMAGE;
     planImage.alt = `${listing.title} apartment plan`;
+    planImage.addEventListener("error", () => {
+      const fallbackUrl = new URL(configDetails.FALLBACK_IMAGE, window.location.href).href;
+      if (planImage.src !== fallbackUrl) {
+        planImage.src = fallbackUrl;
+      }
+    });
   }
 
   if (detailsStore && ui) {

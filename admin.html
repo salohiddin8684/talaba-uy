@@ -1,16 +1,297 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Redirecting | TalabaUy</title>
-    <meta http-equiv="refresh" content="0; url=index.html#admin">
+    <title>TalabaUy | Admin Login</title>
+    <meta
+      name="description"
+      content="Sign in to manage TalabaUy listings and update student housing details."
+    >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Syne:wght@600;700&display=swap"
+      rel="stylesheet"
+    >
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-    <p>Redirecting to <a href="index.html#admin">Admin Login</a>...</p>
-    <script>
-      window.location.replace("index.html#admin");
-    </script>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="logo" href="./#home" aria-label="TalabaUy home">
+          <span class="logo-mark">TU</span>
+          <span class="logo-text">TalabaUy</span>
+        </a>
+
+        <div class="header-actions">
+          <nav class="nav" id="site-nav" aria-label="Primary">
+            <a href="./#home">Home</a>
+            <a href="./#listings">Listings</a>
+            <a href="./#how">How It Works</a>
+            <a href="./#details">Property Details</a>
+            <a href="admin.html" aria-current="page">Login</a>
+            <a href="signup.html">Sign Up</a>
+          </nav>
+
+          <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">
+            <span class="theme-icon sun" aria-hidden="true">
+              <svg viewBox="0 0 24 24" role="presentation" focusable="false">
+                <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.6"></circle>
+                <path
+                  d="M12 3.5v2.4M12 18.1v2.4M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M3.5 12h2.4M18.1 12h2.4M4.9 19.1l1.7-1.7M17.4 6.6l1.7-1.7"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                ></path>
+              </svg>
+            </span>
+            <span class="theme-icon moon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" role="presentation" focusable="false">
+                <path
+                  d="M19.2 14.9A7.4 7.4 0 0 1 9.1 4.8a7.8 7.8 0 1 0 10.1 10.1z"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </svg>
+            </span>
+            <span class="theme-knob" aria-hidden="true"></span>
+          </button>
+
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="site-nav"
+          >
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="admin-shell admin-main" id="admin">
+        <div class="container">
+          <div class="section-head">
+            <h2>TalabaUy Login</h2>
+            <p>Sign in with your email, username, and password to continue.</p>
+          </div>
+
+          <div class="admin-card" id="login-panel">
+            <h3>Welcome Back</h3>
+            <p class="muted">
+              Enter your account details below. You can update the demo credentials in
+              <code>admin.js</code>.
+            </p>
+            <form id="login-form" class="form-grid" novalidate>
+              <div class="form-row">
+                <label for="login-email">Email</label>
+                <input id="login-email" name="email" type="email" autocomplete="email" required>
+              </div>
+              <div class="form-row">
+                <label for="login-username">Username</label>
+                <input id="login-username" name="username" type="text" autocomplete="username" required>
+              </div>
+              <div class="form-row">
+                <label for="login-password">Password</label>
+                <input id="login-password" name="password" type="password" autocomplete="current-password" required>
+              </div>
+              <button class="btn btn-primary" type="submit">Login</button>
+              <p class="form-hint" id="login-status" role="status" aria-live="polite"></p>
+              <p class="form-hint">
+                Demo:
+                <strong>admin@talabauy.uz</strong> /
+                <strong>admin</strong> /
+                <strong>talabauy2026</strong>
+              </p>
+              <p class="form-hint">
+                New here? <a href="signup.html">Create an account</a>.
+              </p>
+            </form>
+          </div>
+
+          <div class="admin-dashboard hidden" id="dashboard">
+            <div class="admin-toolbar">
+              <div class="admin-stats">
+                <div class="stat-card">
+                  <span class="stat-label">Total Listings</span>
+                  <span class="stat-value" id="stats-total">0</span>
+                </div>
+                <div class="stat-card">
+                  <span class="stat-label">Featured Listings</span>
+                  <span class="stat-value" id="stats-featured">0</span>
+                </div>
+              </div>
+              <button class="btn btn-outline" id="logout-btn" type="button">Logout</button>
+            </div>
+
+            <div class="admin-grid">
+              <div class="admin-card">
+                <h3>Add / Edit Listing</h3>
+                <form id="listing-form" class="form-grid" novalidate>
+                  <input type="hidden" id="listing-id" name="listing-id">
+
+                  <div class="form-row">
+                    <label for="listing-title">Title</label>
+                    <input id="listing-title" name="title" type="text" required>
+                  </div>
+
+                  <div class="form-row">
+                    <label for="listing-location">Location</label>
+                    <input id="listing-location" name="location" type="text" required>
+                  </div>
+
+                  <div class="form-row">
+                    <label for="listing-map">Map address or link (optional)</label>
+                    <input
+                      id="listing-map"
+                      name="map"
+                      type="text"
+                      placeholder="e.g. Yunusabad, Tashkent or Google Maps link"
+                    >
+                  </div>
+
+                  <div class="form-row">
+                    <label for="listing-price">Price (USD per month)</label>
+                    <input id="listing-price" name="price" type="number" min="50" required>
+                  </div>
+
+                  <div class="form-row">
+                    <label for="listing-image">Property Image Upload</label>
+                    <input id="listing-image" name="image" type="file" accept="image/*">
+                  </div>
+
+                  <div class="form-row">
+                    <label for="listing-image-url">Property Image URL (optional)</label>
+                    <input id="listing-image-url" name="image-url" type="url" placeholder="https://">
+                  </div>
+
+                  <div class="form-row">
+                    <label for="listing-plan">Apartment Plan Upload</label>
+                    <input id="listing-plan" name="plan" type="file" accept="image/*">
+                  </div>
+
+                  <div class="form-row">
+                    <label for="listing-plan-url">Apartment Plan URL (optional)</label>
+                    <input id="listing-plan-url" name="plan-url" type="url" placeholder="https://">
+                  </div>
+
+                  <div class="form-row inline">
+                    <label><input type="checkbox" id="listing-featured" name="featured"> Featured listing</label>
+                  </div>
+
+                  <div class="form-row">
+                    <label for="listing-telegram">Telegram Link or @handle</label>
+                    <input id="listing-telegram" name="telegram" type="text" placeholder="https://t.me/username">
+                  </div>
+
+                  <h4>Property Details</h4>
+                  <div class="form-grid two-col">
+                    <div class="form-row">
+                      <label for="listing-area">Total Area (m2)</label>
+                      <input id="listing-area" name="area" type="number" min="10">
+                    </div>
+                    <div class="form-row">
+                      <label for="listing-bedrooms">Bedrooms</label>
+                      <input id="listing-bedrooms" name="bedrooms" type="number" min="1">
+                    </div>
+                    <div class="form-row">
+                      <label for="listing-bathrooms">Bathrooms</label>
+                      <input id="listing-bathrooms" name="bathrooms" type="number" min="1">
+                    </div>
+                    <div class="form-row">
+                      <label for="listing-floor">Floor</label>
+                      <input id="listing-floor" name="floor" type="number" min="0">
+                    </div>
+                    <div class="form-row">
+                      <label for="listing-year">Construction Year</label>
+                      <input id="listing-year" name="year" type="number" min="1950">
+                    </div>
+                  </div>
+
+                  <div class="form-row inline-list">
+                    <label><input type="checkbox" id="listing-elevator" name="elevator"> Elevator</label>
+                    <label><input type="checkbox" id="listing-parking" name="parking"> Parking</label>
+                    <label><input type="checkbox" id="listing-wifi" name="wifi"> Wi-Fi</label>
+                    <label><input type="checkbox" id="listing-cable" name="cable"> Cable TV</label>
+                  </div>
+
+                  <h4>Nearby Amenities</h4>
+                  <div class="form-row">
+                    <label for="nearby-education">Education (comma separated)</label>
+                    <input id="nearby-education" name="nearby-education" type="text">
+                  </div>
+                  <div class="form-row">
+                    <label for="nearby-health">Health &amp; Medicine (comma separated)</label>
+                    <input id="nearby-health" name="nearby-health" type="text">
+                  </div>
+                  <div class="form-row">
+                    <label for="nearby-food">Food (comma separated)</label>
+                    <input id="nearby-food" name="nearby-food" type="text">
+                  </div>
+                  <div class="form-row">
+                    <label for="nearby-culture">Culture (comma separated)</label>
+                    <input id="nearby-culture" name="nearby-culture" type="text">
+                  </div>
+
+                  <div class="form-actions">
+                    <button class="btn btn-primary" type="submit">Save Listing</button>
+                    <button class="btn btn-outline" type="reset" id="reset-form">Clear Form</button>
+                  </div>
+                  <p class="form-hint" id="form-status" role="status" aria-live="polite"></p>
+                </form>
+              </div>
+
+              <div class="admin-card">
+                <h3>All Listings</h3>
+                <div class="listing-list" id="listing-list"></div>
+                <div class="form-actions">
+                  <button class="btn btn-outline" id="reset-data" type="button">
+                    Reset Demo Data
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="contact">
+      <div class="container footer-inner">
+        <div>
+          <h3>TalabaUy</h3>
+          <p>Student housing listings you can trust.</p>
+        </div>
+        <div>
+          <p class="footer-label">Support</p>
+          <p>Telegram: @Erwin002</p>
+          <p>Email: hello@talabauy.uz</p>
+        </div>
+        <div>
+          <p class="footer-label">Locations</p>
+          <p>Tashkent, Samarkand, Bukhara</p>
+          <p class="footer-label">Social</p>
+          <div class="footer-links">
+            <a href="https://t.me/Erwin002" target="_blank" rel="noopener">Telegram</a>
+            <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://youtube.com" target="_blank" rel="noopener">YouTube</a>
+          </div>
+        </div>
+      </div>
+      <p class="footer-bottom">2026 TalabaUy. All rights reserved.</p>
+    </footer>
+
+    <script src="data-store.js"></script>
+    <script src="script.js"></script>
+    <script src="admin.js"></script>
   </body>
 </html>

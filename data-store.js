@@ -6,8 +6,7 @@
   const API_BASE = window.TalabaUyApiBase || "";
   const TOKEN_KEY = "talabauy_admin_token_v1";
   const DEFAULT_TELEGRAM = "https://t.me/Erwin002";
-  const FALLBACK_IMAGE =
-    "https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1200&q=70";
+  const FALLBACK_IMAGE = "./assets/placeholder.svg";
 
   const getToken = () => localStorage.getItem(TOKEN_KEY) || "";
   const setToken = (token) => {

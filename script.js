@@ -58,7 +58,7 @@ if (themeToggle) {
 const store = window.TalabaUyStore;
 const config = window.TalabaUyConfig || {
   DEFAULT_TELEGRAM: "https://t.me/Erwin002",
-  FALLBACK_IMAGE: "",
+  FALLBACK_IMAGE: "./assets/placeholder.svg",
 };
 
 const formatPrice = (value) =>
@@ -120,7 +120,7 @@ const createListingCard = (listing) => {
   const mapUrl = buildMapUrl(listing.map, listing.location, listing.title);
 
   card.innerHTML = `
-    <a class="card-media" href="index.html?id=${listing.id}#details" aria-label="View details for ${listing.title}">
+    <a class="card-media" href="./?id=${listing.id}#details" aria-label="View details for ${listing.title}">
       <img src="${image}" alt="${listing.title}">
       ${listing.featured ? '<span class="badge">Featured</span>' : ""}
     </a>
@@ -131,10 +131,20 @@ const createListingCard = (listing) => {
       <div class="card-actions">
         <a class="btn btn-outline" href="${telegramUrl}" target="_blank" rel="noopener">Telegram</a>
         <a class="btn btn-ghost" href="${mapUrl}" target="_blank" rel="noopener">Map</a>
-        <a class="btn btn-ghost" href="index.html?id=${listing.id}#details">View Details</a>
+        <a class="btn btn-ghost" href="./?id=${listing.id}#details">View Details</a>
       </div>
     </div>
   `;
+
+  const img = card.querySelector("img");
+  if (img) {
+    img.addEventListener("error", () => {
+      const fallbackUrl = new URL(config.FALLBACK_IMAGE, window.location.href).href;
+      if (img.src !== fallbackUrl) {
+        img.src = fallbackUrl;
+      }
+    });
+  }
 
   return card;
 };

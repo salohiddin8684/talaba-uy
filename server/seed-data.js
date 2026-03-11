@@ -1,6 +1,5 @@
 const DEFAULT_TELEGRAM = "https://t.me/Erwin002";
-const FALLBACK_IMAGE =
-  "https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1200&q=70";
+const FALLBACK_IMAGE = "./assets/placeholder.svg";
 
 const withLocationParts = (listing) => {
   const parts = String(listing.location || "")

@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TalabaUy | Sign Up</title>
+    <meta
+      name="description"
+      content="Create a TalabaUy account to save listings and manage housing requests."
+    >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Syne:wght@600;700&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="logo" href="./#home" aria-label="TalabaUy home">
+          <span class="logo-mark">TU</span>
+          <span class="logo-text">TalabaUy</span>
+        </a>
+
+        <div class="header-actions">
+          <nav class="nav" id="site-nav" aria-label="Primary">
+            <a href="./#home">Home</a>
+            <a href="./#listings">Listings</a>
+            <a href="./#how">How It Works</a>
+            <a href="./#details">Property Details</a>
+            <a href="admin.html">Login</a>
+            <a href="signup.html" aria-current="page">Sign Up</a>
+          </nav>
+
+          <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">
+            <span class="theme-icon sun" aria-hidden="true">
+              <svg viewBox="0 0 24 24" role="presentation" focusable="false">
+                <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.6"></circle>
+                <path
+                  d="M12 3.5v2.4M12 18.1v2.4M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M3.5 12h2.4M18.1 12h2.4M4.9 19.1l1.7-1.7M17.4 6.6l1.7-1.7"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                ></path>
+              </svg>
+            </span>
+            <span class="theme-icon moon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" role="presentation" focusable="false">
+                <path
+                  d="M19.2 14.9A7.4 7.4 0 0 1 9.1 4.8a7.8 7.8 0 1 0 10.1 10.1z"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </svg>
+            </span>
+            <span class="theme-knob" aria-hidden="true"></span>
+          </button>
+
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="site-nav"
+          >
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="admin-shell admin-main">
+        <div class="container">
+          <div class="section-head">
+            <h2>Create Your Account</h2>
+            <p>Join TalabaUy to save listings and receive housing updates.</p>
+          </div>
+
+          <div class="admin-card">
+            <h3>Sign Up</h3>
+            <form id="signup-form" class="form-grid" novalidate>
+              <div class="form-row">
+                <label for="signup-name">Full Name</label>
+                <input id="signup-name" name="name" type="text" autocomplete="name" required>
+              </div>
+              <div class="form-row">
+                <label for="signup-email">Email</label>
+                <input id="signup-email" name="email" type="email" autocomplete="email" required>
+              </div>
+              <div class="form-row">
+                <label for="signup-username">Username</label>
+                <input id="signup-username" name="username" type="text" autocomplete="username" required>
+              </div>
+              <div class="form-row">
+                <label for="signup-password">Password</label>
+                <input id="signup-password" name="password" type="password" autocomplete="new-password" required>
+              </div>
+              <div class="form-row">
+                <label for="signup-confirm">Confirm Password</label>
+                <input id="signup-confirm" name="confirm" type="password" autocomplete="new-password" required>
+              </div>
+              <button class="btn btn-primary" type="submit">Create Account</button>
+              <p class="form-hint" id="signup-status" role="status" aria-live="polite"></p>
+              <p class="form-hint">
+                Already have an account? <a href="admin.html">Login here</a>.
+              </p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="contact">
+      <div class="container footer-inner">
+        <div>
+          <h3>TalabaUy</h3>
+          <p>Student housing listings you can trust.</p>
+        </div>
+        <div>
+          <p class="footer-label">Support</p>
+          <p>Telegram: @Erwin002</p>
+          <p>Email: hello@talabauy.uz</p>
+        </div>
+        <div>
+          <p class="footer-label">Locations</p>
+          <p>Tashkent, Samarkand, Bukhara</p>
+          <p class="footer-label">Social</p>
+          <div class="footer-links">
+            <a href="https://t.me/Erwin002" target="_blank" rel="noopener">Telegram</a>
+            <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://youtube.com" target="_blank" rel="noopener">YouTube</a>
+          </div>
+        </div>
+      </div>
+      <p class="footer-bottom">2026 TalabaUy. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+      const signupForm = document.getElementById("signup-form");
+      const signupStatus = document.getElementById("signup-status");
+
+      if (signupForm) {
+        signupForm.addEventListener("submit", (event) => {
+          event.preventDefault();
+          const password = signupForm.querySelector("#signup-password")?.value || "";
+          const confirm = signupForm.querySelector("#signup-confirm")?.value || "";
+
+          if (!password || password !== confirm) {
+            signupStatus.textContent = "Passwords do not match. Please try again.";
+            return;
+          }
+
+          signupStatus.textContent =
+            "Signup saved (demo). Please log in with the provided admin credentials.";
+          signupForm.reset();
+        });
+      }
+    </script>
+  </body>
+</html>

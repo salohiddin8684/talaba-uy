@@ -4,6 +4,10 @@
   padding: 0;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   font-family: "Manrope", "Helvetica Neue", sans-serif;
   color: var(--ink);
@@ -12,6 +16,7 @@ body {
     linear-gradient(180deg, #f6f9ff 0%, #eef3ff 45%, #f7f9ff 100%);
   line-height: 1.6;
   min-height: 100vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -73,10 +78,29 @@ textarea {
   margin: 0 auto;
 }
 
+.hero-grid > *,
+.details-hero-grid > *,
+.details-split > *,
+.admin-grid > *,
+.footer-inner > * {
+  min-width: 0;
+}
+
+.card h3,
+.card-meta,
+.details-location,
+.listing-item h4,
+.listing-item p,
+.footer-inner p,
+.form-hint {
+  overflow-wrap: anywhere;
+}
+
 main {
   position: relative;
   z-index: 1;
   flex: 1 0 auto;
+  padding-top: var(--header-offset);
 }
 
 .muted {
@@ -91,4 +115,6 @@ main {
   outline: 3px solid rgba(43, 124, 255, 0.35);
   outline-offset: 2px;
 }
+
+
 
